@@ -51,6 +51,8 @@ def Home():
         except socket.timeout:
             pass
         except Exception as e:
+            import traceback
+            print(traceback.format_exc())
             print("ERR : %s : %s" % (type(e), str(e)))
             bottle.abort(400)
     else:
