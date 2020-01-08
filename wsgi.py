@@ -32,7 +32,7 @@ def Home():
         url = urllib.unquote(url.encode('utf-8')).replace(' ', r'%20')
         try:
             req = urllib2.Request(url)
-            req.add_header('User-Agent', "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Win64; x64; Trident/5.0)")
+            req.add_header('User-Agent', "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36")
             req.add_header('Accept', "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8")
             ret = urllib2.urlopen(req, timeout=timeout)
             content = ret.read()
