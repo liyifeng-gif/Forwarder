@@ -15,6 +15,7 @@ __Author__ = "cdhigh <https://github.com/cdhigh>"
 
 from wsgiref.util import is_hop_by_hop
 import os, urllib, socket, bottle
+ import urllib.request
 
 ALLOW_KEYS = 'xzSlE'
 
@@ -29,7 +30,7 @@ def Home():
         return 'Auth Key is invalid!'
     
     if url and k:
-        url = urllib.parse.unquote(url.encode('utf-8')).replace(' ', r'%20')
+        url = urllib.parse.unquote(url).replace(' ', r'%20')
         try:
             req = urllib.request.Request(url)
             req.add_header('User-Agent', "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36")
